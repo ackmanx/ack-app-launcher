@@ -1,0 +1,92 @@
+{
+  "absolum": {
+    "cmd": "steam://rungameid/1904480"
+  },
+  "avowed": {
+    "cmd": "gamepass"
+  },
+  "baby_steps": {
+    "cmd": "steam://rungameid/1281040"
+  },
+  "castle_crashers": {
+    "cmd": "steam://rungameid/204360"
+  },
+  "clair_obscur_expedition_33": {
+    "cmd": "gamepass"
+  },
+  "cult_of_the_lamb": {
+    "cmd": "steam://rungameid/1313140"
+  },
+  "death_stranding": {
+    "cmd": "steam://rungameid/1190460"
+  },
+  "deathloop": {
+    "cmd": "gamepass"
+  },
+  "deltarune": {
+    "cmd": "steam://rungameid/1671210"
+  },
+  "doom_the_dark_ages": {
+    "cmd": "gamepass"
+  },
+  "fallout_new_vegas_vnv": {
+    "cmd": "D:\\Modlists\\VNV\\ModOrganizer.exe \"moshortcut://:New Vegas\""
+  },
+  "godbreakers": {
+    "cmd": "steam://rungameid/2687400"
+  },
+  "grime": {
+    "cmd": "steam://rungameid/1123050"
+  },
+  "grounded": {
+    "cmd": "steam://rungameid/962130"
+  },
+  "halo_master_chief_collection": {
+    "cmd": "gamepass"
+  },
+  "hollow_knight_silksong": {
+    "cmd": "gamepass"
+  },
+  "huntdown": {
+    "cmd": "steam://rungameid/598550"
+  },
+  "hyper_light_drifter": {
+    "cmd": "steam://rungameid/257850"
+  },
+  "it_takes_two": {
+    "cmd": "steam://rungameid/1426210"
+  },
+  "lego_star_wars_the_skywalker_saga": {
+    "cmd": "gamepass"
+  },
+  "lost_in_random": {
+    "cmd": "steam://rungameid/1462570"
+  },
+  "metal_gear_solid_the_phantom_pain": {
+    "cmd": "steam://rungameid/287700"
+  },
+  "minecraft": {
+    "cmd": "gamepass"
+  },
+  "no_mans_sky": {
+    "cmd": "gamepass"
+  },
+  "outer_wilds": {
+    "cmd": "steam://rungameid/753640"
+  },
+  "primal_planet": {
+    "cmd": "steam://rungameid/2350270"
+  },
+  "salt_and_sanctuary": {
+    "cmd": "steam://rungameid/283640"
+  },
+  "split_fiction": {
+    "cmd": "steam://rungameid/2001120"
+  },
+  "tales_of_kenzera": {
+    "cmd": "steam://rungameid/2316580"
+  },
+  "the_outer_worlds_2": {
+    "cmd": "gamepass"
+  }
+}

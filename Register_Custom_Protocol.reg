@@ -1,0 +1,8 @@
+Windows Registry Editor Version 5.00
+
+[HKEY_CLASSES_ROOT\ack-app-launch]
+@="URL:ackapplaunch"
+"URL Protocol"=""
+
+[HKEY_CLASSES_ROOT\ack-app-launch\shell\open\command]
+@="\"C:\\Users\\majer\\AppData\\Local\\Microsoft\\WindowsApps\\pythonw.exe\" \"D:\\Dropbox\\Temp\\Ack_AppLauncher\\AckAppLauncher.py\" \"%1\""
