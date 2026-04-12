@@ -1,0 +1,9 @@
+#!/bin/bash
+# Get the URL passed by the system
+URL="$1"
+
+# Find the internal Python script
+SCRIPT_PATH="$(dirname "$0")/../Resources/AckAppLauncher.py"
+
+# Execute your script
+/usr/bin/python3 "$SCRIPT_PATH" "$URL"
