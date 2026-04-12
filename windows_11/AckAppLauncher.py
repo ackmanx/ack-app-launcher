@@ -24,11 +24,8 @@ def main():
     if app_name in apps:
         app_config = apps[app_name]
 
-        if sys.platform == "darwin":
-            print(app_config["cmd"])
-        else:
-            # os.startfile handles both local paths (.exe) and URIs (steam://, moshortcut://)
-            os.startfile(app_config["cmd"])
+        # os.startfile handles both local paths (.exe) and URIs (steam://, moshortcut://)
+        os.startfile(app_config["cmd"])
     else:
         print(f"{app_name} not found in config")
 

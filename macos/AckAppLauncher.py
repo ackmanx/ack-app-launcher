@@ -1,5 +1,6 @@
 import json
 import os
+import subprocess
 import sys
 
 CONFIG_PATH = os.path.join(os.path.dirname(__file__), "apps.json")
@@ -25,10 +26,12 @@ def main():
         app_config = apps[app_name]
 
         if sys.platform == "darwin":
-            print(app_config["cmd"])
-        else:
-            # os.startfile handles both local paths (.exe) and URIs (steam://, moshortcut://)
-            os.startfile(app_config["cmd"])
+            # Using 'open' decouples the target from this Python process
+            subprocess.Popen(
+                ["open", app_config["cmd"]],
+                stdout=subprocess.DEVNULL,
+                stderr=subprocess.DEVNULL,
+            )
     else:
         print(f"{app_name} not found in config")
 
