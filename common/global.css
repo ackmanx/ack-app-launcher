@@ -1,0 +1,44 @@
+:root {
+  --grid-gap: 42px;
+}
+
+body {
+  font-family: sans-serif;
+  background: #1a1a1a;
+  color: white;
+  margin: 0;
+  padding: var(--grid-gap);
+}
+
+#dashboard {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--grid-gap);
+}
+
+.app-card {
+  width: 200px;
+  text-align: center;
+  transition: transform 0.2s;
+}
+
+.app-card:hover {
+  transform: scale(1.05);
+}
+
+.app-card img {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  display: block;
+  object-fit: cover;
+
+  &.game {
+    aspect-ratio: 2/3;
+  }
+
+  &.non-game {
+    aspect-ratio: 1;
+  }
+}
