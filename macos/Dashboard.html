@@ -1,203 +1,26 @@
 <!doctype html>
-<html>
+<html lang="en">
   <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#000000" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+
+    <link rel="manifest" href="../manifest.json" />
+    <link rel="icon" href="../favicon.png" />
+
+    <link rel="stylesheet" href="../common/global.css" />
+
     <title>Ack! App Launcher</title>
-    <style>
-      :root {
-        --grid-gap: 42px;
-      }
-
-      body {
-        font-family: sans-serif;
-        background: #1a1a1a;
-        color: white;
-        margin: 0;
-        padding: var(--grid-gap);
-      }
-
-      #dashboard {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: var(--grid-gap);
-      }
-
-      .app-card {
-        width: 200px;
-        text-align: center;
-        transition: transform 0.2s;
-      }
-
-      .app-card:hover {
-        transform: scale(1.05);
-      }
-
-      .app-card img {
-        width: 100%;
-        border-radius: 10px;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
-        display: block;
-        aspect-ratio: 2/3;
-        object-fit: cover;
-      }
-    </style>
 
     <script>
       window.apps = {
-        absolum: {
-          steam_id_for_cover: '1904480',
-          name: 'Absolum',
-          platform: 'steam',
-        },
-        avowed: {
-          steam_id_for_cover: '2457220',
-          name: 'Avowed',
-          platform: 'microsoft',
-        },
-        baby_steps: {
-          steam_id_for_cover: '1281040',
-          name: 'Baby Steps',
-          platform: 'steam',
-        },
-        castle_crashers: {
-          steam_id_for_cover: '204360',
-          name: 'Castle Crashers',
-          platform: 'steam',
-        },
-        clair_obscur_expedition_33: {
-          steam_id_for_cover: '1903340',
-          name: 'Clair Obscur - Expedition 33',
-          platform: 'microsoft',
-        },
-        cult_of_the_lamb: {
-          steam_id_for_cover: '1313140',
-          name: 'Cult of the Lamb',
-          platform: 'steam',
-        },
-        death_stranding: {
-          steam_id_for_cover: '1190460',
-          name: 'Death Stranding',
-          platform: 'steam',
-        },
-        deathloop: {
-          steam_id_for_cover: '1252330',
-          name: 'Deathloop',
-          platform: 'microsoft',
-        },
-        deltarune: {
-          steam_id_for_cover: '1671210',
-          is_demo: true,
-          name: 'Deltarune',
-          platform: 'steam',
-        },
-        doom_the_dark_ages: {
-          steam_id_for_cover: '3017860',
-          name: 'Doom: The Dark Ages',
-          platform: 'microsoft',
-        },
-        fallout_new_vegas_vnv: {
-          steam_id_for_cover: '22380',
-          name: 'Fallout: New Vegas',
-          platform: 'steam',
-        },
-        godbreakers: {
-          // Steam's vertical picture for this game ID is wrong
-          cover_art: 'https://images.pcgamingwiki.com/b/bd/GODBREAKERS_cover.jpg',
-          is_demo: true,
-          name: 'Godbreakers',
-          platform: 'steam',
-        },
-        grime: {
-          steam_id_for_cover: '1123050',
-          is_demo: true,
-          name: 'GRIME',
-          platform: 'steam',
-        },
-        grounded: {
-          steam_id_for_cover: '962130',
-          name: 'Grounded',
-          platform: 'steam',
-        },
-        halo_master_chief_collection: {
-          steam_id_for_cover: '976730',
-          name: 'Halo: Master Chief Collection',
-          platform: 'microsoft',
-        },
-        hollow_knight_silksong: {
-          steam_id_for_cover: '1030300',
-          name: 'Hollow Knight: Silksong',
-          platform: 'microsoft',
-        },
-        huntdown: {
-          steam_id_for_cover: '598550',
-          name: 'Huntdown',
-          platform: 'steam',
-        },
-        hyper_light_drifter: {
-          steam_id_for_cover: '257850',
-          name: 'Hyper Light Drifter',
-          platform: 'steam',
-        },
-        it_takes_two: {
-          steam_id_for_cover: '1426210',
-          name: 'It Takes Two',
-          platform: 'steam',
-        },
-        lego_star_wars_the_skywalker_saga: {
-          steam_id_for_cover: '920210',
-          name: 'LEGO Star Wars: The Skywalker Saga',
-          platform: 'microsoft',
-        },
-        lost_in_random: {
-          steam_id_for_cover: '1462570',
-          name: 'Lost in Random',
-          platform: 'steam',
-        },
-        metal_gear_solid_the_phantom_pain: {
-          steam_id_for_cover: '287700',
-          name: 'Metal Gear Solid: The Phantom Pain',
-          platform: 'steam',
-        },
-        minecraft: {
-          cover_art:
-            'https://store-images.s-microsoft.com/image/apps.53095.13850085746326678.06e2dc5c-7997-46e9-a8e6-0e48b57cb13b.419e3c9d-9dd3-4a28-a9f3-a12350215871?q=90&w=600&h=800',
-          name: 'Minecraft',
-          platform: 'microsoft',
-        },
-        no_mans_sky: {
-          steam_id_for_cover: '275850',
-          name: "No Man's Sky",
-          platform: 'microsoft',
-        },
-        outer_wilds: {
-          steam_id_for_cover: '753640',
-          name: 'Outer Wilds',
-          platform: 'steam',
-        },
-        primal_planet: {
-          steam_id_for_cover: '2350270',
-          name: 'Primal Planet',
-          platform: 'steam',
-        },
-        salt_and_sanctuary: {
-          steam_id_for_cover: '283640',
-          name: 'Salt and Sanctuary',
-          platform: 'steam',
-        },
-        split_fiction: {
-          steam_id_for_cover: '2001120',
-          name: 'Split Fiction',
-          platform: 'steam',
-        },
-        tales_of_kenzera: {
-          steam_id_for_cover: '2316580',
-          name: 'Tales of Kenzera: ZAU',
-          platform: 'steam',
-        },
-        the_outer_worlds_2: {
-          steam_id_for_cover: '1449110',
-          name: 'The Outer Worlds 2',
-          platform: 'microsoft',
+        spotify: {
+          cover_art: 'https://cdn-icons-png.flaticon.com/512/725/725281.png',
+          name: 'Spotify',
+          platform: 'non-game',
         },
       }
     </script>
@@ -226,7 +49,13 @@
         const card = document.createElement('a')
 
         card.href = `ack-app-launch://${app_name}`
-        card.className = 'app-card'
+
+        if (app.platform === 'non-game') {
+          card.className = 'app-card non-game'
+        } else {
+          card.className = 'app-card game'
+        }
+
         card.innerHTML = `<img src="${image_url}" alt="${app_name} ${app.name}">`
         container.appendChild(card)
       })

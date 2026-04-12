@@ -1,46 +1,19 @@
 <!doctype html>
 <html>
   <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#000000" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+
+    <link rel="manifest" href="../manifest.json" />
+    <link rel="icon" href="../favicon.png" />
+
+    <link rel="stylesheet" href="../common/global.css" />
+
     <title>Ack! App Launcher</title>
-    <style>
-      :root {
-        --grid-gap: 42px;
-      }
-
-      body {
-        font-family: sans-serif;
-        background: #1a1a1a;
-        color: white;
-        margin: 0;
-        padding: var(--grid-gap);
-      }
-
-      #dashboard {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: var(--grid-gap);
-      }
-
-      .app-card {
-        width: 200px;
-        text-align: center;
-        transition: transform 0.2s;
-      }
-
-      .app-card:hover {
-        transform: scale(1.05);
-      }
-
-      .app-card img {
-        width: 100%;
-        border-radius: 10px;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
-        display: block;
-        aspect-ratio: 2/3;
-        object-fit: cover;
-      }
-    </style>
 
     <script>
       window.apps = {
@@ -226,7 +199,13 @@
         const card = document.createElement('a')
 
         card.href = `ack-app-launch://${app_name}`
-        card.className = 'app-card'
+
+        if (app.platform === 'non-game') {
+          card.className = 'app-card non-game'
+        } else {
+          card.className = 'app-card game'
+        }
+
         card.innerHTML = `<img src="${image_url}" alt="${app_name} ${app.name}">`
         container.appendChild(card)
       })
