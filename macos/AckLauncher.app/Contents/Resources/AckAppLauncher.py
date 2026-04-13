@@ -24,14 +24,18 @@ def main():
 
     if app_name in apps:
         app_config = apps[app_name]
+        cmd = app_config["cmd"]
 
-        if sys.platform == "darwin":
-            # Using 'open' decouples the target from this Python process
-            subprocess.Popen(
-                ["open", app_config["cmd"]],
-                stdout=subprocess.DEVNULL,
-                stderr=subprocess.DEVNULL,
-            )
+        print(f"Found {app_name}, executing: {cmd}")
+
+        # Using shell=True allows you to pass the full string
+        # like "open -a Spotify" or "open steam://..."
+        subprocess.Popen(
+            cmd,
+            shell=True,
+            stdout=subprocess.DEVNULL,
+            stderr=subprocess.DEVNULL,
+        )
     else:
         print(f"{app_name} not found in config")
 

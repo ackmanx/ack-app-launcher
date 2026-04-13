@@ -1,9 +1,17 @@
 #!/bin/bash
-# Get the URL passed by the system
-URL="$1"
 
-# Find the internal Python script
+# Redirect all output and errors to a log file in your home directory
+exec > "$HOME/ack_launcher_debug.log" 2>&1
+
+echo "--- Launch Attempt: $(date) ---"
+echo "Arguments received: $@"
+
+# Use absolute path for Python to avoid $PATH issues in GUI apps
+PYTHON_BIN="/usr/bin/python3"
 SCRIPT_PATH="$(dirname "$0")/../Resources/AckAppLauncher.py"
 
-# Execute your script
-/usr/bin/python3 "$SCRIPT_PATH" "$URL"
+echo "Running script: $SCRIPT_PATH"
+
+$PYTHON_BIN "$SCRIPT_PATH" "$1"
+
+echo "Exit code: $?"
