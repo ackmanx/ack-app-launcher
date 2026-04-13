@@ -32,17 +32,13 @@ def main():
         app_config = apps[app_key]
         cmd = app_config["cmd"]
 
-        # Alert the user that we found the app and are launching it
-        notify("Ack! App Launcher", f"Launching {app_key}...")
-
-        if sys.platform == "darwin":
-            # shell=True is required here to parse the full command string
-            subprocess.Popen(
-                cmd,
-                shell=True,
-                stdout=subprocess.DEVNULL,
-                stderr=subprocess.DEVNULL,
-            )
+        # shell=True is required here to parse the full command string
+        subprocess.Popen(
+            cmd,
+            shell=True,
+            stdout=subprocess.DEVNULL,
+            stderr=subprocess.DEVNULL,
+        )
     else:
         notify("Ack! App Launcher", f"App '{app_key}' not found in apps.json.")
         print(f"{app_key} not found in config")
