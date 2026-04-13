@@ -20,7 +20,6 @@
         spotify: {
           cover_art: 'https://cdn-icons-png.flaticon.com/512/725/725281.png',
           name: 'Spotify',
-          platform: 'non-game',
         },
       }
     </script>
@@ -31,17 +30,14 @@
     <script>
       const container = document.getElementById('dashboard')
 
+      //Loop through each app and create a card for it
       Object.keys(window.apps).forEach((app_name) => {
         const app = window.apps[app_name]
-
-        const steam_id = app.steam_id_for_cover
 
         let image_url
 
         if (app.cover_art) {
           image_url = app.cover_art
-        } else if (app.steam_id_for_cover) {
-          image_url = `https://steamcdn-a.akamaihd.net/steam/apps/${app.steam_id_for_cover}/library_600x900.jpg`
         } else {
           image_url = ''
         }
@@ -49,14 +45,9 @@
         const card = document.createElement('a')
 
         card.href = `ack-app-launch://${app_name}`
-
-        if (app.platform === 'non-game') {
-          card.className = 'app-card non-game'
-        } else {
-          card.className = 'app-card game'
-        }
-
+        card.className = 'app-card non-game'
         card.innerHTML = `<img src="${image_url}" alt="${app_name} ${app.name}">`
+
         container.appendChild(card)
       })
     </script>
