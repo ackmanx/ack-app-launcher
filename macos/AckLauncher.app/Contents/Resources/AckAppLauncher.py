@@ -6,38 +6,46 @@ import sys
 CONFIG_PATH = os.path.join(os.path.dirname(__file__), "apps.json")
 
 
-if not os.path.exists(CONFIG_PATH):
-    exit(1)
+def notify(title, message):
+    """Sends a native macOS notification."""
+    # We use osascript to trigger the notification center
+    apple_script = f'display notification "{message}" with title "{title}"'
+    subprocess.run(["osascript", "-e", apple_script])
 
 
-# All this script does is look up the requested app in the config store, then open it
 def main():
+    if not os.path.exists(CONFIG_PATH):
+        notify("Ack Launcher Error", "Configuration file (apps.json) not found.")
+        exit(1)
+
     if len(sys.argv) < 2:
         return
 
-    # Parse the app key (e.g., "ack-app-launch://fallout/" -> "fallout")
+    # Parse the app key (e.g., "ack-app-launch://spotify" -> "spotify")
     raw_url = sys.argv[1]
-    app_name = raw_url.replace("ack-app-launch://", "").rstrip("/")
+    app_key = raw_url.replace("ack-app-launch://", "").rstrip("/")
 
     with open(CONFIG_PATH, "r") as file:
         apps = json.load(file)
 
-    if app_name in apps:
-        app_config = apps[app_name]
+    if app_key in apps:
+        app_config = apps[app_key]
         cmd = app_config["cmd"]
 
-        print(f"Found {app_name}, executing: {cmd}")
+        # Alert the user that we found the app and are launching it
+        notify("Ack! App Launcher", f"Launching {app_key}...")
 
-        # Using shell=True allows you to pass the full string
-        # like "open -a Spotify" or "open steam://..."
-        subprocess.Popen(
-            cmd,
-            shell=True,
-            stdout=subprocess.DEVNULL,
-            stderr=subprocess.DEVNULL,
-        )
+        if sys.platform == "darwin":
+            # shell=True is required here to parse the full command string
+            subprocess.Popen(
+                cmd,
+                shell=True,
+                stdout=subprocess.DEVNULL,
+                stderr=subprocess.DEVNULL,
+            )
     else:
-        print(f"{app_name} not found in config")
+        notify("Ack! App Launcher", f"App '{app_key}' not found in apps.json.")
+        print(f"{app_key} not found in config")
 
 
 if __name__ == "__main__":
