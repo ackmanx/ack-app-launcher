@@ -1,5 +1,8 @@
 {
   "spotify": {
     "cmd": "open -a Spotify"
+  },
+  "antigravity": {
+    "cmd": "open -a \"Antigravity\""
   }
 }
