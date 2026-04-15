@@ -4,5 +4,74 @@
   },
   "antigravity": {
     "cmd": "open -a \"Antigravity\""
+  },
+  "firefox_dev": {
+    "cmd": "open -a 'Firefox Developer Edition'"
+  },
+  "lego_studio": {
+    "cmd": "open -a Studio"
+  },
+  "amphetamine": {
+    "cmd": "open -a Amphetamine"
+  },
+  "bartender": {
+    "cmd": "open -a 'Bartender 5'"
+  },
+  "blackmagic_disk_speed_test": {
+    "cmd": "open -a 'Blackmagic Disk Speed Test'"
+  },
+  "bluesnooze": {
+    "cmd": "open -a Bluesnooze"
+  },
+  "capcut": {
+    "cmd": "open -a CapCut"
+  },
+  "disk_space_analyzer": {
+    "cmd": "open -a 'Disk Space Analyzer'"
+  },
+  "dropbox": {
+    "cmd": "open -a Dropbox"
+  },
+  "find_my": {
+    "cmd": "open -a 'Find My'"
+  },
+  "forklift": {
+    "cmd": "open -a Forklift"
+  },
+  "iterm": {
+    "cmd": "open -a iTerm"
+  },
+  "jetbrains_toolbox": {
+    "cmd": "open -a 'Jetbrains Toolbox'"
+  },
+  "little_snitch": {
+    "cmd": "open -a 'Little Snitch'"
+  },
+  "mongodb_compass": {
+    "cmd": "open -a 'MongoDB Compass'"
+  },
+  "naps2": {
+    "cmd": "open -a NAPS2"
+  },
+  "opencode": {
+    "cmd": "open -a OpenCode"
+  },
+  "pixelmator_pro": {
+    "cmd": "open -a Pixelmator Pro"
+  },
+  "proton_mail": {
+    "cmd": "open -a 'Proton Mail'"
+  },
+  "proton_pass": {
+    "cmd": "open -a 'Proton Pass'"
+  },
+  "rectangle": {
+    "cmd": "open -a Rectangle"
+  },
+  "warp_terminal": {
+    "cmd": "open -a 'Warp Terminal'"
+  },
+  "zed": {
+    "cmd": "open -a Zed"
   }
 }
